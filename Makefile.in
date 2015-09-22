@@ -177,9 +177,9 @@ libsrtpdoc:
 .PHONY: clean superclean install
 
 install:
-	@if [ -d $(DESTDIR)$(includedir)/srtp ]; then \
-	   echo "you should run 'make uninstall' first"; exit 1;  \
-	fi
+#	@if [ -d $(DESTDIR)$(includedir)/srtp ]; then \
+#	   echo "you should run 'make uninstall' first"; exit 1;  \
+#	fi
 	$(INSTALL) -d $(DESTDIR)$(includedir)/srtp
 	$(INSTALL) -d $(DESTDIR)$(libdir)
 	cp include/*.h $(DESTDIR)$(includedir)/srtp  
