@@ -36,7 +36,7 @@ for arch in $ARCHS; do
                 echo "Building opencore-amr for iPhoneSimulator $arch *****************"
                 PATH=`xcodebuild -version -sdk iphonesimulator PlatformPath`"/Developer/usr/bin:$PATH" \
 		SDKROOT=$(xcrun --sdk iphonesimulator --show-sdk-path)
-		CC="$(xcrun --sdk iphonesimulator -f clang)"
+		CC="xcrun --sdk iphonesimulator clang -arch $arch $IOSMV"
 		CXX="xcrun --sdk iphonesimulator clang++ -arch $arch $IOSMV -miphoneos-version-min=5.0" \
                 ./configure \
                 --prefix=$DEST \
